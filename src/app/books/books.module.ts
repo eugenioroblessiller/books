@@ -3,8 +3,9 @@ import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { MaterialModule } from '../material/material.module';
-import { IndexComponent } from './pages/index/index.component';
+import { BooksRoutingModule } from './books-routing.module';
 import { HomeComponent } from './pages/home/home.component';
+import { IndexComponent } from './pages/index/index.component';
 
 
 
@@ -16,7 +17,8 @@ import { HomeComponent } from './pages/home/home.component';
   imports: [
     CommonModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    BooksRoutingModule
   ]
 })
 export class BooksModule { }
