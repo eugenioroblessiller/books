@@ -5,11 +5,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchPipe } from './pipes/search.pipe';
+import { ErrorPageComponent } from './shared/error-page/error-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchPipe
+    SearchPipe,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
