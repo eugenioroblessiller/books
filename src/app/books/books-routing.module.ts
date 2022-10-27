@@ -8,7 +8,7 @@ import { IndexComponent } from './pages/index/index.component';
 const routes: Routes = [
   {
     path: '', component: HomeComponent, children: [
-      { path: 'books', component: IndexComponent },
+      { path: 'list', component: IndexComponent },
     ]
   }
 ];
