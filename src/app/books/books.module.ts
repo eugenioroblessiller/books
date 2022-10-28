@@ -6,6 +6,7 @@ import { MaterialModule } from '../material/material.module';
 import { BooksRoutingModule } from './books-routing.module';
 import { HomeComponent } from './pages/home/home.component';
 import { IndexComponent } from './pages/index/index.component';
+import { WishListComponent } from './pages/wish-list/wish-list.component';
 
 
 
@@ -13,6 +14,7 @@ import { IndexComponent } from './pages/index/index.component';
   declarations: [
     IndexComponent,
     HomeComponent,
+    WishListComponent,
   ],
   imports: [
     CommonModule,
