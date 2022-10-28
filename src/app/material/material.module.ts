@@ -19,6 +19,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   ],
   imports: [
     CommonModule
-  ]
+   ]
 })
 export class MaterialModule { }
