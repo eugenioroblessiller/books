@@ -10,12 +10,12 @@
     </mat-toolbar>
 
     <mat-nav-list>
-      <a routerLink="./listado" mat-list-item (click)="sidenav.toggle()">
+      <a routerLink="./list" mat-list-item (click)="sidenav.toggle()">
         <mat-icon mat-list-icon>import_contacts</mat-icon>
         <span>Books</span>
       </a>
 
-      <a routerLink="./agregar" mat-list-item (click)="sidenav.toggle()">
+      <a routerLink="./wish-list" mat-list-item (click)="sidenav.toggle()">
         <mat-icon mat-list-icon>bookmarks</mat-icon>
         <span>Wishlist</span>
       </a>
@@ -38,7 +38,4 @@
   <div class="container">
     <router-outlet></router-outlet>
   </div>
-
 </mat-sidenav-container>
-
-<router-outlet></router-outlet>
