@@ -1,11 +1,25 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 import { ErrorPageComponent } from './shared/error-page/error-page.component';
 
 const routes: Routes = [
-  { path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
-  { path: 'books', loadChildren: () => import('./books/books.module').then(m => m.BooksModule) },
+  {
+    path: '', component: AuthLayoutComponent,
+    children: [
+      { path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
+    ]
+  },
+  {
+    path: '', component: AdminLayoutComponent,
+    children: [
+      { path: 'books', loadChildren: () => import('./books/books.module').then(m => m.BooksModule) },
+      { path: 'users', loadChildren: () => import('./users/users.module').then(m => m.UsersModule) },
+    ]
+  },
+
   { path: '404', component: ErrorPageComponent },
   { path: '**', redirectTo: '404' },
 ];
