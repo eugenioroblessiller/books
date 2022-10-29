@@ -6,7 +6,7 @@
         <div style="font-size: 12px">
           <mat-form-field class="example-full-width" appearance="outline">
             <mat-label>Email</mat-label>
-            <input type="email" matInput placeholder="Ex. pat@example.com">
+            <input [(ngModel)]="user.email" name="email" type="email" matInput placeholder="Ex. pat@example.com">
             <mat-hint>Errors appear instantly!</mat-hint>
             <mat-error>
               Please enter a valid email address
@@ -17,11 +17,11 @@
           </mat-form-field>
           <mat-form-field class="example-full-width" appearance="outline">
             <mat-label>Password</mat-label>
-            <input type="password" matInput placeholder="********">
+            <input [(ngModel)]="user.password" name="password" type="password" matInput placeholder="********">
             <mat-hint>Errors appear instantly!</mat-hint>
           </mat-form-field>
 
-          <button class="button-login" mat-raised-button>Login</button>
+          <button class="button-login" type="button" (click)="loginUser()" mat-raised-button>Login</button>
         </div>
       </form>
     </mat-card-content>
