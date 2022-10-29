@@ -5,12 +5,14 @@ import { MaterialModule } from './../material/material.module';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { LoaderComponent } from './loader/loader.component';
 import { DialogComponent } from './dialog/dialog.component';
+import { SnackbarComponent } from './snackbar/snackbar.component';
 
 @NgModule({
   declarations: [
     ErrorPageComponent,
     LoaderComponent,
-    DialogComponent
+    DialogComponent,
+    SnackbarComponent
   ],
   imports: [
     CommonModule,
@@ -19,7 +21,8 @@ import { DialogComponent } from './dialog/dialog.component';
   exports: [
     ErrorPageComponent,
     LoaderComponent,
-    DialogComponent
+    DialogComponent,
+    SnackbarComponent
   ],
   providers: [],
 })
