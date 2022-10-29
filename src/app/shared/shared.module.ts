@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { MaterialModule } from './../material/material.module';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { LoaderComponent } from './loader/loader.component';
+import { DialogComponent } from './dialog/dialog.component';
 
 @NgModule({
   declarations: [
     ErrorPageComponent,
-    LoaderComponent
+    LoaderComponent,
+    DialogComponent
   ],
   imports: [
     CommonModule,
@@ -16,7 +18,8 @@ import { LoaderComponent } from './loader/loader.component';
   ],
   exports: [
     ErrorPageComponent,
-    LoaderComponent
+    LoaderComponent,
+    DialogComponent
   ],
   providers: [],
 })
