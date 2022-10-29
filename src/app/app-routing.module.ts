@@ -6,6 +6,7 @@ import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component
 import { ErrorPageComponent } from './shared/error-page/error-page.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'auth/login', pathMatch: 'full' },
   {
     path: '', component: AuthLayoutComponent,
     children: [
