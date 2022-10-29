@@ -10,13 +10,11 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 import { MaterialModule } from './material/material.module';
 import { SearchPipe } from './pipes/search.pipe';
-import { ErrorPageComponent } from './shared/error-page/error-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchPipe,
-    ErrorPageComponent,
     AdminLayoutComponent,
     AuthLayoutComponent
   ],
@@ -26,8 +24,9 @@ import { ErrorPageComponent } from './shared/error-page/error-page.component';
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
-    FlexLayoutModule
+    FlexLayoutModule,
   ],
+  exports: [],
   providers: [],
   bootstrap: [AppComponent]
 })
