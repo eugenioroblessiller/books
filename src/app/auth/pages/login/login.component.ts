@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { LoaderComponent } from 'src/app/shared/loader/loader.component';
 import { IUser } from 'src/app/users/interfaces/user';
 
 @Component({
@@ -8,9 +10,13 @@ import { IUser } from 'src/app/users/interfaces/user';
 })
 export class LoginComponent implements OnInit {
 
+  @ViewChild("loginLoader", { static: true }) loader!: LoaderComponent;
+
   user!: IUser;
 
-  constructor() { }
+  constructor(
+    private _router: Router
+  ) { }
 
   ngOnInit(): void {
     this.user = {
@@ -24,6 +30,8 @@ export class LoginComponent implements OnInit {
 
 
   loginUser() {
+    console.log(this.loader)
+    this.loader.show()
     console.log('login', this.user)
   }
 }
