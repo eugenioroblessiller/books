@@ -6,13 +6,15 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 import { LoaderComponent } from './loader/loader.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { SnackbarComponent } from './snackbar/snackbar.component';
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 
 @NgModule({
   declarations: [
     ErrorPageComponent,
     LoaderComponent,
     DialogComponent,
-    SnackbarComponent
+    SnackbarComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     CommonModule,
