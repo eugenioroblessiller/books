@@ -7,6 +7,7 @@ import { IUser } from 'src/app/users/interfaces/user';
 import { AuthService } from '../../services/auth.service';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 import { SnackbarComponent } from 'src/app/shared/snackbar/snackbar.component';
+import { showErrorDialog, showSnackBar } from 'src/app/helpers/helpers';
 
 @Component({
   selector: 'app-login',
@@ -37,11 +38,11 @@ export class LoginComponent implements OnInit {
 
   async loginUser() {
     if (this.user.email.length == 0) {
-      this.showSnackBar('Email is needed')
+      showSnackBar('Email is needed', this._snackBar)
       return
     }
     if (this.user.password.length == 0) {
-      this.showSnackBar('Password is needed')
+      showSnackBar('Password is needed', this._snackBar)
       return
     }
     this.loader.show()
@@ -55,29 +56,7 @@ export class LoginComponent implements OnInit {
     } catch (error) {
       console.error(error)
       this.loader.hide()
-      this.showErrorDialog();
+      showErrorDialog('Error', `There was an error, please try agin latter`, 'OK', this._modal);
     }
-  }
-
-  private showSnackBar(message: any) {
-    const data = {
-      message
-    };
-    const config: MatSnackBarConfig = { panelClass: 'snackbar-container', data, duration: 5 * 1000, };
-    this._snackBar.openFromComponent(SnackbarComponent, config);
-  }
-
-  private showErrorDialog() {
-    const data = {
-      title: "Error",
-      message: `There was an error, please try agin latter`,
-      buttonMessage: 'OK'
-    };
-    const config: MatDialogConfig = { panelClass: 'gnrl-dialog', data };
-    const modal = this._modal.open(DialogComponent, config);
-
-    modal.afterClosed().subscribe(isConfirmed => {
-      console.log(isConfirmed);
-    });
   }
 }
