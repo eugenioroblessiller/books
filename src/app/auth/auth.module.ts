@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { MaterialModule } from '../material/material.module';
 import { AuthRoutingModule } from './auth-routing.module';
@@ -16,7 +17,8 @@ import { RegisterComponent } from './pages/register/register.component';
   imports: [
     CommonModule,
     MaterialModule,
-    AuthRoutingModule
+    AuthRoutingModule,
+    FormsModule,
   ]
 })
 export class AuthModule { }
