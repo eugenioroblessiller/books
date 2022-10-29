@@ -1,0 +1,20 @@
+mat-card {
+  max-width: 400px;
+  margin: 9em auto;
+  text-align: center;
+}
+
+mat-card-title {
+  margin-bottom: 20px;
+}
+
+mat-form-field {
+  display: block;
+  margin-bottom: 16px;
+}
+
+
+.button-login {
+  width: 100%;
+  background-color: #FFA500 !important;
+}
