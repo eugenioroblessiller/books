@@ -41,13 +41,13 @@ export class LoginComponent implements OnInit {
       showSnackBar('Email is needed', this._snackBar)
       return
     }
-    if (this.user.password.length == 0) {
+    if (this.user.password!.length == 0) {
       showSnackBar('Password is needed', this._snackBar)
       return
     }
     this.loader.show()
     try {
-      const res: any = await this._authService.login(this.user.email, this.user.password)
+      const res: any = await this._authService.login(this.user.email, this.user.password!)
       console.log(res)
       if (res.message == 'authenticated') {
         this._router.navigate(['books/list'])
