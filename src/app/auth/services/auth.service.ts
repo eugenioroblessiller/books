@@ -23,6 +23,7 @@ export class AuthService {
       console.log(email, password)
       setTimeout(() => {
         this.isAuthenticated.next(true)
+        // localStorage.setItem('currentUser', JSON.stringify(user));
         resolve({ message: "authenticated" })
       }, 1000);
     })
