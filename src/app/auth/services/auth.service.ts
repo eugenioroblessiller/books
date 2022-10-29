@@ -19,9 +19,13 @@ export class AuthService {
   ) { }
 
   login(email: string, password: string) {
-    console.log(email, password)
-    setTimeout(() => {
-      this.isAuthenticated.next(true)
-    }, 1000);
+    return new Promise((resolve, reject) => {
+      console.log(email, password)
+      setTimeout(() => {
+        this.isAuthenticated.next(true)
+        resolve({ message: "authenticated" })
+      }, 1000);
+    })
   }
+
 }
