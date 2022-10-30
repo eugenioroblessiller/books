@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { LoaderComponent } from 'src/app/shared/loader/loader.component';
+
 import { IBook } from '../../interfaces/books';
 import { BooksService } from '../../services/books.service';
 
@@ -27,12 +28,17 @@ export class IndexComponent implements OnInit {
     try {
       const res = await this._booksService.getBooks()
       console.log(res)
-      this.books = res
+      this.books = res.filter(book => book.isInWishList == false)
       this.loader.hide()
     } catch (error) {
       console.error(error)
       this.loader.hide()
     }
+  }
+
+  bookEdited(book: IBook) {
+    const index = this.books.findIndex(book => book.id == book.id)
+    this.books.splice(index, 1)
   }
 
 }
