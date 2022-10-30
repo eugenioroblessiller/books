@@ -2,12 +2,13 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 import { MaterialModule } from './../material/material.module';
-import { ErrorPageComponent } from './error-page/error-page.component';
-import { LoaderComponent } from './loader/loader.component';
-import { DialogComponent } from './dialog/dialog.component';
-import { SnackbarComponent } from './snackbar/snackbar.component';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
+import { DialogComponent } from './dialog/dialog.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 import { IconComponent } from './icon/icon.component';
+import { LoaderComponent } from './loader/loader.component';
+import { SnackbarComponent } from './snackbar/snackbar.component';
+import { InfoCardComponent } from './info-card/info-card.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { IconComponent } from './icon/icon.component';
     DialogComponent,
     SnackbarComponent,
     ConfirmDialogComponent,
-    IconComponent
+    IconComponent,
+    InfoCardComponent
   ],
   imports: [
     CommonModule,
@@ -27,7 +29,8 @@ import { IconComponent } from './icon/icon.component';
     LoaderComponent,
     DialogComponent,
     SnackbarComponent,
-    IconComponent
+    IconComponent,
+    InfoCardComponent
   ],
   providers: [],
 })
