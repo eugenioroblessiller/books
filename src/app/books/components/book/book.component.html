@@ -1,8 +1,9 @@
 <mat-card class="example-card">
   <mat-card-header>
     <mat-card-title style="margin-top: 10px;">{{book.title}}</mat-card-title>
-      <span class="spacer"></span>
-    <button mat-icon-button (click)="askBeforeDelete(book)">
+    <span class="spacer"></span>
+    <button mat-icon-button #tooltip="matTooltip" matTooltip="Delete book" matTooltipPosition="above"
+      matTooltipHideDelay="1" (click)="askBeforeDelete(book)">
       <mat-icon>close</mat-icon>
     </button>
     <mat-card-subtitle>{{book.author}}</mat-card-subtitle>
