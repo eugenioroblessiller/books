@@ -27,7 +27,7 @@ export class BookComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  async addBookToWishList(book: IBook) {
+  async toggleBookInWishList(book: IBook) {
     book.isInWishList = !book.isInWishList
     this.loader.show()
     try {
