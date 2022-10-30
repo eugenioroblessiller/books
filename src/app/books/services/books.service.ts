@@ -26,8 +26,9 @@ export class BooksService {
     return lastValueFrom(this._http.get<IBook[]>(url))
   }
 
-  createBook() {
-
+  createBook(book: IBook) {
+    const url = `${this.baseUrl}/books`
+    return lastValueFrom(this._http.post<IBook>(url, book))
   }
 
   readBook() {
