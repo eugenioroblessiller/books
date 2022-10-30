@@ -10,8 +10,8 @@
   </mat-card-content>
   <mat-card-actions align="end">
     <button mat-mini-fab color="{{book.isInWishList ? 'warn': 'primary'}}" #tooltip="matTooltip"
-      matTooltip="Add book to whishlist" matTooltipPosition="above" matTooltipHideDelay="1"
-      (click)="toggleBookInWishList(book)">
+      matTooltip="{{book.isInWishList ? 'Remove book from whishlist': 'Add book to whishlist'}}"
+      matTooltipPosition="above" matTooltipHideDelay="1" (click)="toggleBookInWishList(book)">
       <icon icon="bookmarks" *ngIf="book.isInWishList == false"></icon>
       <icon icon="close" *ngIf="book.isInWishList == true"></icon>
     </button>
