@@ -10,6 +10,7 @@ import { IndexComponent } from './pages/index/index.component';
 import { WishListComponent } from './pages/wish-list/wish-list.component';
 import { AddUpdateBookComponent } from './components/add-update-book/add-update-book.component';
 import { FormsModule } from '@angular/forms';
+import { TableComponent } from './components/table/table.component';
 
 
 
@@ -19,6 +20,7 @@ import { FormsModule } from '@angular/forms';
     WishListComponent,
     BookComponent,
     AddUpdateBookComponent,
+    TableComponent,
   ],
   imports: [
     CommonModule,
