@@ -10,6 +10,8 @@ Once you have your books on your wish list and you regret about some books, you 
 
 Books also lets you add new books, help us collect more books and share them with everyone.
 
+> **_NOTE:_**  This project is responsive, you can see it on your cell phone 😄.
+
 # Getting started
 
 To be able to enter Books you need a username and a password, don't worry, any username with any password works.
