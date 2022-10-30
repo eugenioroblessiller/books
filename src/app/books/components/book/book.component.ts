@@ -1,5 +1,10 @@
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { showErrorDialog } from 'src/app/helpers/helpers';
+import { LoaderComponent } from 'src/app/shared/loader/loader.component';
+
+import { BooksService } from '../../services/books.service';
 import { IBook } from './../../interfaces/books';
-import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-book',
@@ -8,15 +13,32 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class BookComponent implements OnInit {
 
+  @ViewChild("bookLoader", { static: true }) loader!: LoaderComponent;
+
   @Input() book!: IBook
 
-  constructor() { }
+  @Output() newBookEventEmitter = new EventEmitter<IBook>();
+
+  constructor(
+    private _booksService: BooksService,
+    private _modal: MatDialog,
+  ) { }
 
   ngOnInit(): void {
   }
 
-
-  addBookToWishList(book: IBook) {
-    console.log('book to add --->', book)
+  async addBookToWishList(book: IBook) {
+    book.isInWishList = !book.isInWishList
+    this.loader.show()
+    try {
+      const res = await this._booksService.updateBook(book)
+      console.log(res)
+      this.newBookEventEmitter.emit(res)
+      this.loader.hide()
+    } catch (error) {
+      console.error(error)
+      this.loader.hide()
+      showErrorDialog('Error', `There was an error, please try agin latter`, 'OK', this._modal);
+    }
   }
 }

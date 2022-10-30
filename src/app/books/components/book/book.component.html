@@ -9,9 +9,14 @@
     </p>
   </mat-card-content>
   <mat-card-actions align="end">
-    <button mat-mini-fab color="primary" #tooltip="matTooltip" matTooltip="Add book to whishlist"
-      matTooltipPosition="above" matTooltipHideDelay="1" (click)="addBookToWishList(book)">
-      <icon icon="bookmarks"></icon>
+    <button mat-mini-fab color="{{book.isInWishList ? 'warn': 'primary'}}" #tooltip="matTooltip"
+      matTooltip="Add book to whishlist" matTooltipPosition="above" matTooltipHideDelay="1"
+      (click)="addBookToWishList(book)">
+      <icon icon="bookmarks" *ngIf="book.isInWishList == false"></icon>
+      <icon icon="close" *ngIf="book.isInWishList == true"></icon>
     </button>
   </mat-card-actions>
 </mat-card>
+
+
+<app-loader #bookLoader></app-loader>
