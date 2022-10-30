@@ -17,7 +17,7 @@
 </div>
 <mat-divider></mat-divider>
 
-
+<!-- Cards View -->
 <div *ngIf="isCardsView">
   <div fxLayout='row wrap' fxLayout.xs="column" fxLayoutAlign="space-evenly" fxLayoutGap="20px"
     *ngIf="books.length > 0">
@@ -27,10 +27,13 @@
     </div>
   </div>
 </div>
+<!-- END Card View -->
 
+<!-- Table View -->
 <div *ngIf="!isCardsView" style="margin-top: 15px;">
   <book-table [books]=books [columnsToDisplay]="columnsToDisplay" [expandedElement]="expandedElement"
     [columnsToDisplayWithExpand]="columnsToDisplayWithExpand"></book-table>
 </div>
+<!-- END Table View -->
 
 <app-loader #booksLoader></app-loader>
