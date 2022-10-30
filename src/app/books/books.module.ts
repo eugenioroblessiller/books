@@ -8,6 +8,8 @@ import { BooksRoutingModule } from './books-routing.module';
 import { BookComponent } from './components/book/book.component';
 import { IndexComponent } from './pages/index/index.component';
 import { WishListComponent } from './pages/wish-list/wish-list.component';
+import { AddUpdateBookComponent } from './components/add-update-book/add-update-book.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -16,13 +18,15 @@ import { WishListComponent } from './pages/wish-list/wish-list.component';
     IndexComponent,
     WishListComponent,
     BookComponent,
+    AddUpdateBookComponent,
   ],
   imports: [
     CommonModule,
     BooksRoutingModule,
     SharedModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    FormsModule
   ]
 })
 export class BooksModule { }
