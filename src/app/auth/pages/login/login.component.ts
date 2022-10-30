@@ -1,13 +1,12 @@
-import { DialogComponent } from './../../../shared/dialog/dialog.component';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { showErrorDialog, showSnackBar } from 'src/app/helpers/helpers';
 import { LoaderComponent } from 'src/app/shared/loader/loader.component';
 import { IUser } from 'src/app/users/interfaces/user';
+
 import { AuthService } from '../../services/auth.service';
-import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
-import { SnackbarComponent } from 'src/app/shared/snackbar/snackbar.component';
-import { showErrorDialog, showSnackBar } from 'src/app/helpers/helpers';
 
 @Component({
   selector: 'app-login',
