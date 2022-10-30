@@ -1,4 +1,5 @@
 export interface IBook {
+  id: string
   isbn: string;
   title: string;
   isInWishList: boolean;
@@ -10,3 +11,4 @@ export interface IBook {
   description: string;
   website: string;
 }
+;
