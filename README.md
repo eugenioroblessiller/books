@@ -12,6 +12,7 @@ Books also lets you add new books, help us collect more books and share them wit
 
 > **_NOTE:_**  This project is responsive, you can see it on your cell phone 😄.
 
+> **_NOTE:_** IMPORTANT -> For the api to work you have to download this repository --> (https://github.com/eugenioroblessiller/server). This is very important since the information is not local, I wanted to demonstrate all the steps in the process of a call to an endpoint so I set up a fake server..
 # Getting started
 
 To be able to enter Books you need a username and a password, don't worry, any username with any password works.
@@ -38,7 +39,6 @@ At the end, close session at the top and come back whenever you want
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.6.
 
-> **_NOTE:_** IMPORTANT -> For the api to work you have to download this repository --> (https://github.com/eugenioroblessiller/server). This is very important since the information is not local, I wanted to demonstrate all the steps in the process of a call to an endpoint so I set up a fake server..
 
 ## Development server
 
