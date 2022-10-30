@@ -43,12 +43,6 @@ export class IndexComponent implements OnInit {
     }
   }
 
-  bookEdited(book: IBook) {
-    const index = this.books.findIndex(obj => obj.id == book.id)
-    this.books.splice(index, 1)
-    showSnackBar(`Book: ${book.title} has enter your wish list :)`, this._snackbar)
-  }
-
   openModalToAddBook() {
     const data: any = { mode: 'new' };
     const config: MatDialogConfig = { panelClass: 'gnrl-dialog', width: '1200px', data }
@@ -78,5 +72,17 @@ export class IndexComponent implements OnInit {
       this.loader.hide();
       showErrorDialog('Error', "There was trying to add your new book, try again latter", "Try again", this._modal);
     }
+  }
+
+  bookEdited(book: IBook) {
+    const index = this.books.findIndex(obj => obj.id == book.id)
+    this.books.splice(index, 1)
+    showSnackBar(`Book: ${book.title} has enter your wish list :)`, this._snackbar)
+  }
+
+  bookDeleted(book: IBook) {
+    const index = this.books.findIndex(obj => obj.id == book.id)
+    this.books.splice(index, 1)
+    showSnackBar(`You just deleted a book :(`, this._snackbar)
   }
 }
