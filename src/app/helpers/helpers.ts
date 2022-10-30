@@ -4,6 +4,13 @@ import { DialogComponent } from '../shared/dialog/dialog.component';
 
 import { SnackbarComponent } from '../shared/snackbar/snackbar.component';
 
+/**
+ * Genereics
+ * It takes a message and a snackbar as parameters, and then it shows a snackbar with the message
+ * @param {string} message - The message to be displayed in the snackbar.
+ * @param {MatSnackBar} snackbar - MatSnackBar - This is the snackbar service that we imported from
+ * @angular/material.
+ */
 export function showSnackBar(message: string, snackbar: MatSnackBar) {
   const data = {
     message
@@ -12,6 +19,15 @@ export function showSnackBar(message: string, snackbar: MatSnackBar) {
   snackbar.openFromComponent(SnackbarComponent, config);
 }
 
+/**
+ * Genereics
+ * It opens a dialog with a title, message, and button message
+ * @param {string} title - The title of the dialog
+ * @param {string} message - The message to be displayed in the dialog.
+ * @param {string} buttonMessage - The text that will be displayed on the button.
+ * @param {MatDialog} modal - MatDialog - this is the modal service that you imported from
+ * @angular/material
+ */
 export function showErrorDialog(title: string, message: string, buttonMessage: string, modal: MatDialog) {
   const data = {
     title,

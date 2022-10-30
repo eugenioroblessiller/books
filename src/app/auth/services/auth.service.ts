@@ -29,9 +29,24 @@ export class AuthService {
     }
   }
 
+  /**
+   * We're creating a new promise that will resolve after a timeout of 1000ms (Simulation).
+   *
+   * The promise will resolve with an object that has a message property with the value of
+   * "authenticated".
+   *
+   * We're also setting the currentUser in localStorage to the user object we created earlier.
+   *
+   * We're also setting the userSubject to the user object we created earlier.
+   *
+   * We're also setting the isAuthenticated subject to true.
+   * @param {string} email - string, password: string
+   * @param {string} password - string - The password of the user
+   * @returns A promise that resolves to an object with a message property.
+   */
   login(email: string, password: string) {
     return new Promise((resolve, reject) => {
-      console.log(email, password)
+      // console.log(email, password)
       setTimeout(() => {
         localStorage.setItem('currentUser', JSON.stringify(this.user));
         this.userSubject.next(this.user);
@@ -42,6 +57,10 @@ export class AuthService {
     })
   }
 
+  /**
+   * It clears the local storage, sets the isAuthenticated subject to false, and sets the userSubject to
+   * null
+   */
   logout() {
     localStorage.clear()
     this.isAuthenticated.next(false)
