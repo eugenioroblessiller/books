@@ -34,8 +34,9 @@ export class BooksService {
 
   }
 
-  updateBook() {
-
+  updateBook(book: IBook) {
+    const url = `${this.baseUrl}/books/${book.id}`
+    return lastValueFrom(this._http.put<IBook>(url, book))
   }
 
   deleteBook() {
