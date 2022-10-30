@@ -1,4 +1,4 @@
-<table mat-table [dataSource]="books" multiTemplateDataRows class="mat-elevation-z8">
+<table mat-table #bookTable [dataSource]="books" multiTemplateDataRows class="mat-elevation-z8">
   <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay">
     <th mat-header-cell *matHeaderCellDef> {{column}} </th>
     <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
@@ -25,9 +25,10 @@
         <div fxLayout='row' fxLayout.xs="column" fxLayoutAlign="space-evenly">
           <div fxFlex="100" fxLayout.xs="column" fxLayoutAlign="end center">
 
-            <button mat-raised-button color="primary" type="button" aria-label="Example icon-button with menu icon">Agregar libro</button>
-
-            <button mat-raised-button color="primary" type="button" aria-label="Example icon-button with menu icon">Agregar libro</button>
+            <button class="shrink" (click)="toggleBookInWishList(element)" mat-raised-button color="primary"
+              type="button">Agregar libro</button>
+            <button class="shrink" (click)="askBeforeDelete(element)" mat-raised-button color="warn"
+              type="button">Delete Book</button>
           </div>
         </div>
       </div>
@@ -41,3 +42,5 @@
   </tr>
   <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="detail-row"></tr>
 </table>
+
+<app-loader #bookLoader></app-loader>

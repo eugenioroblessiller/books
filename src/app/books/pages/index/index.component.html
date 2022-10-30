@@ -32,7 +32,8 @@
 <!-- Table View -->
 <div *ngIf="!isCardsView" style="margin-top: 15px;">
   <book-table [books]=books [columnsToDisplay]="columnsToDisplay" [expandedElement]="expandedElement"
-    [columnsToDisplayWithExpand]="columnsToDisplayWithExpand"></book-table>
+    [columnsToDisplayWithExpand]="columnsToDisplayWithExpand" (newBookEventEmitter)="bookEdited($event)"
+    (deleteBookEventEmitter)="bookDeleted($event)"></book-table>
 </div>
 <!-- END Table View -->
 
