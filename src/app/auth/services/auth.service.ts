@@ -11,7 +11,7 @@ import { environment } from '../../../environments/environment';
 export class AuthService {
 
   isAuthenticated: BehaviorSubject<boolean | null> = new BehaviorSubject<boolean | null>(null)
-  private userSubject: BehaviorSubject<IUser>;
+  private userSubject: BehaviorSubject<any>;
 
   private baseUrl: string = environment.baseUrl;
 
@@ -21,17 +21,21 @@ export class AuthService {
     private _http: HttpClient
 
   ) {
-    this.userSubject = new BehaviorSubject<IUser>(JSON.parse(localStorage.getItem('currentUser')!));
-    if (this.userSubject) this.isAuthenticated.next(false)
+    this.userSubject = new BehaviorSubject<any>(JSON.parse(localStorage.getItem('currentUser')!));
+    if (this.userSubject.value) {
+      this.isAuthenticated.next(true)
+    } else {
+      this.isAuthenticated.next(false)
+    }
   }
 
   login(email: string, password: string) {
     return new Promise((resolve, reject) => {
       console.log(email, password)
       setTimeout(() => {
-        this.isAuthenticated.next(true)
         localStorage.setItem('currentUser', JSON.stringify(this.user));
         this.userSubject.next(this.user);
+        this.isAuthenticated.next(true)
         resolve({ message: "authenticated" })
       }, 1000);
 
