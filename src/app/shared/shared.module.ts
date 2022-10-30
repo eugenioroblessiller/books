@@ -7,6 +7,7 @@ import { LoaderComponent } from './loader/loader.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { SnackbarComponent } from './snackbar/snackbar.component';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
+import { IconComponent } from './icon/icon.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.componen
     LoaderComponent,
     DialogComponent,
     SnackbarComponent,
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    IconComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +26,8 @@ import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.componen
     ErrorPageComponent,
     LoaderComponent,
     DialogComponent,
-    SnackbarComponent
+    SnackbarComponent,
+    IconComponent
   ],
   providers: [],
 })
