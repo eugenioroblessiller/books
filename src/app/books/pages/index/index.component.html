@@ -1,7 +1,8 @@
 <div fxLayout='row wrap' fxLayout.xs="column" fxLayoutAlign="space-between" fxLayoutAlign.xs="center center">
   <h1>Book List</h1>
   <div style="font-size: 12px; margin-bottom: 5px;">
-    <button mat-raised-button color="primary" type="button" aria-label="Example icon-button with menu icon">Agregar libro</button>
+    <button mat-raised-button color="primary" type="button" aria-label="Example icon-button with menu icon"
+      (click)="openModalToAddBook()">Agregar libro</button>
   </div>
 </div>
 <mat-divider></mat-divider>
