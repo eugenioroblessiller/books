@@ -1,18 +1,36 @@
-<div fxLayout='row wrap' fxLayout.xs="column" fxLayoutAlign="space-between" fxLayoutAlign.xs="center center">
-  <h1>Book List</h1>
-  <div style="font-size: 12px; margin-bottom: 5px;">
-    <button mat-raised-button color="primary" type="button" aria-label="Example icon-button with menu icon"
-      (click)="openModalToAddBook()">Agregar libro</button>
+<div fxLayout='row' fxLayout.xs="column">
+  <div fxFlex="100" fxLayout.xs="column">
+    <h1>Book List</h1>
+  </div>
+  <div fxFlex="100" fxLayout.xs="column" fxLayoutAlign="end center">
+    <div style="font-size: 12px; margin-bottom: 5px;">
+      <mat-button-toggle-group name="fontStyle" aria-label="Font Style" style="margin-right: 10px;"
+        *ngIf="innerWidth > 716">
+        <mat-button-toggle value="bold" (click)="isCardsView = true">Cards</mat-button-toggle>
+        <mat-button-toggle value="italic" (click)="isCardsView = false">Table</mat-button-toggle>
+      </mat-button-toggle-group>
+
+      <button mat-raised-button color="primary" type="button" aria-label="Example icon-button with menu icon"
+        (click)="openModalToAddBook()">Agregar libro</button>
+    </div>
   </div>
 </div>
 <mat-divider></mat-divider>
 
 
-
-<div fxLayout='row wrap' fxLayout.xs="column" fxLayoutAlign="space-evenly" fxLayoutGap="20px" *ngIf="books.length > 0">
-  <div fxFlex="30" fxFlex.lg="30" fxFlex.sm="30" *ngFor="let book of books">
-    <app-book [book]="book" (newBookEventEmitter)="bookEdited($event)" (deleteBookEventEmitter)="bookDeleted($event)"></app-book>
+<div *ngIf="isCardsView">
+  <div fxLayout='row wrap' fxLayout.xs="column" fxLayoutAlign="space-evenly" fxLayoutGap="20px"
+    *ngIf="books.length > 0">
+    <div fxFlex="30" fxFlex.lg="30" fxFlex.sm="40" *ngFor="let book of books">
+      <app-book [book]="book" (newBookEventEmitter)="bookEdited($event)" (deleteBookEventEmitter)="bookDeleted($event)">
+      </app-book>
+    </div>
   </div>
+</div>
+
+<div *ngIf="!isCardsView" style="margin-top: 15px;">
+  <book-table [books]=books [columnsToDisplay]="columnsToDisplay" [expandedElement]="expandedElement"
+    [columnsToDisplayWithExpand]="columnsToDisplayWithExpand"></book-table>
 </div>
 
 <app-loader #booksLoader></app-loader>

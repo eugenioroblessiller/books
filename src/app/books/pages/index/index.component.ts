@@ -1,24 +1,35 @@
+import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { showErrorDialog, showSnackBar } from 'src/app/helpers/helpers';
-import { IModalResult } from './../../interfaces/modalResult';
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { LoaderComponent } from 'src/app/shared/loader/loader.component';
-import { AddUpdateBookComponent } from '../../components/add-update-book/add-update-book.component';
 
+import { AddUpdateBookComponent } from '../../components/add-update-book/add-update-book.component';
 import { IBook } from '../../interfaces/books';
 import { BooksService } from '../../services/books.service';
+import { IModalResult } from './../../interfaces/modalResult';
 
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
-  styleUrls: ['./index.component.css']
+  styleUrls: ['./index.component.css'],
 })
+
+
 export class IndexComponent implements OnInit {
 
   @ViewChild("booksLoader", { static: true }) loader!: LoaderComponent;
 
+  innerWidth: any
+
   books: IBook[] = []
+
+  isCardsView: boolean = true
+
+  dataSource = this.books;
+  columnsToDisplay = ['author', 'title', 'publisher', 'pages'];
+  columnsToDisplayWithExpand = [...this.columnsToDisplay, 'expand'];
+  expandedElement!: IBook | null;
 
   constructor(
     private _booksService: BooksService,
@@ -27,7 +38,16 @@ export class IndexComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.innerWidth = window.innerWidth;
+    if (this.innerWidth < 716) this.isCardsView = true
+
     this.getBooks()
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.innerWidth = window.innerWidth;
+    if (this.innerWidth < 716) this.isCardsView = true
   }
 
   async getBooks() {
