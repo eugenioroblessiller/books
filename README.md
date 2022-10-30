@@ -1,6 +1,42 @@
 # Books
 
+# Introduction
+
+Books is an app that allows you to see a list of books, you can also add those books to a wish list so that you can read them later.
+
+Books lets you view your books in two ways, with cards and in a table.
+
+Once you have your books on your wish list and you regret about some books, you can remove books from your list.
+
+Books also lets you add new books, help us collect more books and share them with everyone.
+
+# Getting started
+
+To be able to enter Books you need a username and a password, don't worry, any username with any password works.
+
+![image info](src/assets/login.png)
+
+Upon entering books, you will immediately find a list of books that we think you might be interested in, you can add those books to your wish list or remove them altogether.
+
+![image info](src/assets/cardView.png)
+
+At the top of the list you also have a button to add new books, share new books with everyone.
+
+![image info](src/assets/addBook.png)
+
+You will also find your wish list, enter and check your books, you can also remove those books.
+
+![image info](src/assets/wishList.png)
+
+At the end, close session at the top and come back whenever you want
+
+![image info](src/assets/logout.png)
+
+# About Books
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.6.
+
+> **_NOTE:_** IMPORTANT -> For the api to work you have to download this repository --> (https://github.com/eugenioroblessiller/server). This is very important since the information is not local, I wanted to demonstrate all the steps in the process of a call to an endpoint so I set up a fake server..
 
 ## Development server
 
