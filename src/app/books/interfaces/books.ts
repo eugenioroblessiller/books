@@ -1,14 +1,14 @@
 export interface IBook {
-  id: string
+  id?: string
   isbn: string;
   title: string;
   isInWishList: boolean;
-  subtitle: string;
-  author: string;
-  published: Date;
-  publisher: string;
-  pages: number;
-  description: string;
-  website: string;
+  subtitle?: string;
+  author?: string;
+  published?: Date;
+  publisher?: string;
+  pages?: number;
+  description?: string;
+  website?: string;
 }
-;
+
