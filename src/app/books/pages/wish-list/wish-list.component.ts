@@ -1,3 +1,5 @@
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { showSnackBar } from 'src/app/helpers/helpers';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { LoaderComponent } from 'src/app/shared/loader/loader.component';
 
@@ -16,7 +18,8 @@ export class WishListComponent implements OnInit {
   books: IBook[] = []
 
   constructor(
-    private _booksService: BooksService
+    private _booksService: BooksService,
+    private _snackbar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
@@ -39,7 +42,8 @@ export class WishListComponent implements OnInit {
 
 
   bookEdited(book: IBook) {
-    const index = this.books.findIndex(book => book.id == book.id)
+    const index = this.books.findIndex(obj => obj.id == book.id)
     this.books.splice(index, 1)
+    showSnackBar(`Book: ${book.title} has left the room`, this._snackbar)
   }
 }
