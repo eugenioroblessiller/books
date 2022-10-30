@@ -1,4 +1,14 @@
-<div fxLayout='row wrap' fxLayout.xs="column" fxLayoutAlign="space-evenly" fxLayoutGap="20px">
+<div fxLayout='row wrap' fxLayout.xs="column" fxLayoutAlign="space-between">
+  <h1>Book List</h1>
+  <div style="font-size: 12px">
+    <button mat-raised-button color="primary" aria-label="Example icon-button with menu icon">Agregar libro</button>
+  </div>
+</div>
+<mat-divider></mat-divider>
+
+
+
+<div fxLayout='row wrap' fxLayout.xs="column" fxLayoutAlign="space-evenly" fxLayoutGap="20px" *ngIf="books.length > 0">
   <div fxFlex="30" fxFlex.lg="30" fxFlex.sm="30" *ngFor="let book of books">
     <app-book [book]="book" (newBookEventEmitter)="bookEdited($event)"></app-book>
   </div>
