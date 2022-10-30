@@ -9,7 +9,8 @@
     </p>
   </mat-card-content>
   <mat-card-actions align="end">
-    <button mat-mini-fab color="primary" (click)="addBookToWishList(book)">
+    <button mat-mini-fab color="primary" #tooltip="matTooltip" matTooltip="Add book to whishlist"
+      matTooltipPosition="above" matTooltipHideDelay="1" (click)="addBookToWishList(book)">
       <icon icon="bookmarks"></icon>
     </button>
   </mat-card-actions>
