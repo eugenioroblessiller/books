@@ -7,6 +7,7 @@ import { SharedModule } from '../shared/shared.module';
 import { BooksRoutingModule } from './books-routing.module';
 import { IndexComponent } from './pages/index/index.component';
 import { WishListComponent } from './pages/wish-list/wish-list.component';
+import { BookComponent } from './components/book/book.component';
 
 
 
@@ -14,6 +15,7 @@ import { WishListComponent } from './pages/wish-list/wish-list.component';
   declarations: [
     IndexComponent,
     WishListComponent,
+    BookComponent,
   ],
   imports: [
     CommonModule,
