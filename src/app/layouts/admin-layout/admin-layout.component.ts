@@ -23,7 +23,7 @@ export class AdminLayoutComponent implements OnInit {
 
   askBeforeLogout() {
     const message = "Are you sure you want to logout?"
-    const config: MatDialogConfig = { data: { message, title: "LOGOUT" }, width: '300px' }
+    const config: MatDialogConfig = { data: { message, title: "LOGOUT", color: "warn" }, width: '300px' }
 
     const modal = this._modal.open(ConfirmDialogComponent, config);
     modal.afterClosed().subscribe(confirmed => {
