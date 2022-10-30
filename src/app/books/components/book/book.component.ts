@@ -15,4 +15,8 @@ export class BookComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  addBookToWishList(book: IBook) {
+    console.log('book to add --->', book)
+  }
 }
