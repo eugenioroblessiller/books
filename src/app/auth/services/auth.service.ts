@@ -15,7 +15,7 @@ export class AuthService {
 
   private baseUrl: string = environment.baseUrl;
 
-  private user: IUser = { id: 1, name: "Lucian Termure", email: "lucian.termure@gmail.com" }
+  private user: IUser = { id: 1, name: "Eugenio Robles", email: "eugenio@gmail.com" }
 
   constructor(
     private _http: HttpClient

@@ -79,7 +79,7 @@ export class IndexComponent implements OnInit {
   }
 
 
-  private async createNewBook(result: IModalResult) {
+ async createNewBook(result: IModalResult) {
     this.loader.show();
     try {
       const res = await this._booksService.createBook(result.data);

@@ -1,5 +1,5 @@
 export class Book {
-  id?: string
+  public id?: string
   isbn!: string;
   title!: string;
   isInWishList!: boolean;

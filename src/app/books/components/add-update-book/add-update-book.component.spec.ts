@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
+import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { AddUpdateBookComponent } from './add-update-book.component';
 
@@ -8,9 +10,14 @@ describe('AddUpdateBookComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddUpdateBookComponent ]
+      declarations: [AddUpdateBookComponent],
+      imports: [MatDialogModule, FormsModule],
+      providers: [
+        { provide: MAT_DIALOG_DATA, useValue: {} },
+        { provide: MatDialogRef, useValue: {} }
+      ]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(AddUpdateBookComponent);
     component = fixture.componentInstance;
