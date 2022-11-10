@@ -46,4 +46,10 @@ export class WishListComponent implements OnInit {
     this.books.splice(index, 1)
     showSnackBar(`Book: ${book.title} has left the room`, this._snackbar)
   }
+
+  bookDeleted(book: IBook) {
+    const index = this.books.findIndex(obj => obj.id == book.id)
+    this.books.splice(index, 1)
+    showSnackBar(`You just deleted a book :(`, this._snackbar)
+  }
 }
